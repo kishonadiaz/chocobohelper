@@ -1,0 +1,52 @@
+{
+	"name":"ChoboHelper",
+	"version":"0.1",
+	"manifest_version":2,
+
+	"browser_action":{
+		"default_icon":"assets/apple.png",
+		"default_popup":"popup.html",
+		"script":["js/popup.js"],
+		"style":["css/popup.css"]
+	},
+
+	"background":{
+		"scripts":["js/background.js"]
+	},
+	"web_accessible_resources":
+	[
+		"js/libs/*",
+		"/*.png",
+		"/*.gif",
+		"/*.css",
+		"app/*"
+	],
+	"content_scripts":[
+		{
+			"matches":["http://*/*","https://*/*"],
+			"css":["css/chobomain.css"],
+			"js":["js/libs/comlib.js",
+				"js/libs/storageclass.js",
+				"js/worker.js",
+				"js/choboworker.js",
+				"app/choboscripts/choboObject/chobochacterobj.js",
+				"app/choboscripts/chobomain.js"
+			]
+		}
+	],
+	"offline_enabled":true,
+	"permissions":[
+		"activeTab",
+		"tabs",
+		"http://*/*",
+		"https://*/*",
+		"*://*/*",
+		"file://*",
+		"file://*/*",
+		"<all_urls>",
+		"windows",
+		"storage",
+		"file:///app/*/*",
+		"unlimitedStorage"
+	]
+}

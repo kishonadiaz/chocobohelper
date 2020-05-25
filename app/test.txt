@@ -1,0 +1,141 @@
+here
+
+visibility: visible;
+    /* display: none; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+
+var GetItem = function(){
+	this.event;
+	this.item;
+	this.f;
+	this.setEvent = function(e){
+		this.event = e;
+	}
+	this.set = function(val){
+		this.item = val;
+	}
+	this.get = function(){
+		if(this.item != undefined){
+			return this.item;
+		}
+	}
+	this.gettarget = function(){
+		if(this.get() != undefined){
+			if(this.get().target != undefined){
+				return this.get().target;
+			}
+			
+		}
+	}
+	this.theitem = function(){
+
+		if(this.gettarget().id != undefined)
+			return this.gettarget();
+		else{
+			if(this.gettarget().class != undefined)
+				return this.gettarget();
+		}
+	}
+
+	this.func = function(funct){
+		var e = this.event;
+		if(funct != undefined){
+			console.log("ok");
+			funct(e);
+		}
+	}
+	this.update = function(){
+		this.func();
+	}
+}
+
+var ClickThis = function(target){
+	this.arr = {"character":"character",
+							"items":"items",
+							"duty":"duty",
+							"quests":"quests",
+							"crafting":"crafting",
+							"gathering":"gathering",
+							"achievements":"achievements",
+							"shops":"shops",
+							"textcommands":"textcommands",
+							"notes":"notes",
+							"listen":"listen",
+							"summon":"summon",
+							"chobotemsexit":"chobotemsexit"};
+
+	this.isbuilt = false;
+	this.current;
+	this.hoveraction = function(t){
+		if(t != undefined){
+			if(this.arr[t] != undefined)
+				return this.arr[t];
+		}
+	}
+
+	this.key = function(target){
+		if(target  != undefined){
+			if(target.getAttribute("id") != undefined){
+				return this.hoveraction(target.getAttribute("id"));
+			}
+		}
+	}
+
+	this.setterm = function(obj){
+		
+		if(this.key(obj) != undefined){
+			
+			if(obj.getAttribute("id") != undefined){
+				if(this.key(obj) === obj.getAttribute("id")){
+					
+					if(this.key(obj) != undefined){
+
+						this[this.key(obj)] = document.getElementById(obj.getAttribute("id"));
+						this.current = this[this.key(obj)];
+
+					}
+				}
+			}
+			
+		}
+	}
+
+	this.getterm = function(){
+		if(this.current != undefined){
+			console.log(this);
+			return document.getElementById(this.current.getAttribute("id"));
+		}
+	}
+	this.onclick = function(e){
+		console.log(e.target);
+	}
+	this.click = function(){
+
+		if(this.getterm() != undefined){
+			console.log(this.getterm());
+			this.getterm().addEventListener('click',this.onclick);
+		}
+	}
+	this.clear = function(){
+		if(this.getterm() != undefined){
+			this.getterm().removeEventListener('click',this.onclick);
+		}
+	}
+
+	this.build = function(target){
+		//console.log(target);
+		
+			this.setterm(target);
+			this.click();
+			this.clear();
+			this.isbuilt = true;
+		
+	}
+
+}

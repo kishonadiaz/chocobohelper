@@ -1,0 +1,52 @@
+.colorpicker{
+	position: fixed;
+	z-index: 300000;
+
+
+}
+.colorbtn{
+	left:46px;
+	position:fixed;
+	z-index: 30000;
+}
+.chobochar{
+	display: block;
+}
+/*.directionproc{
+	width: 0;
+	height:0;
+	display: none;
+}*/
+.debug{
+	width: 100%;
+	height:100%;
+}
+
+.brainclass{
+	border:1px solid black;
+	width: 100%;
+	height: 100%;
+	display: inline-flex;
+}
+
+.brainsubclass{
+	border:1px solid blue;
+	width: 100%;
+	display: flex;
+	z-index: 100000;
+	
+}
+
+.brainsubclass:hover{
+	 position: fixed;
+	 transform: scale(2,2);
+	 left:0;
+	 right:0;
+	 top: 0;
+	 bottom: 0;
+	 margin-right: auto;
+	 margin-left: auto;
+	 background-color: white;
+	 z-index: 1000000;
+
+}

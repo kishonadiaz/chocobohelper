@@ -1,0 +1,281 @@
+html{
+	width: 530px;
+  height: 530px;
+}
+body{
+	background: #808080;
+	margin: 0;
+}
+
+#chobonav,#choboheader,#chobowrap{
+	border: 1px solid black;
+}
+nav > ul{
+	background: #3c3c3c;
+  margin: 0;
+  padding-left: 1px;
+  display: grid;
+  grid-template-columns: auto auto;
+
+}
+li{
+	list-style: none;
+	background: #1f1f1f;
+	border: #1f1f1f;
+}
+ #chobotemsexit{
+ 	transition: top 5s ease-out;
+ }
+.chobotemsexitopen{
+    width: 100px;
+    height: 40px;
+    background: red;
+    position: fixed;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 92px;
+    color: white;
+    border-radius: 20px;
+    display: inherit;
+    
+}
+.chobotemsexitclose{
+  width: 100px;
+  height: 0;
+  background: red;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 156px;
+  display: none;
+}
+.querylistopen{
+	    visibility: visible;
+    /* display: grid; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0;
+    height: 100%;
+    font-size: 25px;
+    display: inherit;
+    z-index: 40;
+    
+}
+
+.querylistclose{
+	visibility: collapse;
+	height: 0;
+	display: none;
+	transition: visibility 5s, height 800s ease-out 5s;
+}
+
+.choboitemslist{
+	padding-top: 11px;
+  border: 1px solid #808080;
+  margin: 0;
+
+}
+.choboitemslist > a{
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    top: -8px;
+    margin-top: 2px;
+    display: inline-flex;
+}
+.choboitemslist:hover {
+		background-color: #404040;
+}
+/*.choboitemslis:active{
+	text-decoration: none;
+	color: lightblue
+}*/
+
+
+#searchcont{
+	margin-left: 60px;
+}
+#search_icon{
+	position: absolute;
+  right: 102px;
+  top: 3px;
+  height: 9vmin;
+  width: 12vmin;
+  background: url(chrome-extension://jddpgibmfdfiilfoihdfiffnmmegnmib/assets/searchicon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+
+}
+#searchcheck{
+	display: none;
+}
+.pageicons{
+	height:15vmin;
+	width:15vmin;
+	border-radius: 80px;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-color: purple !important;
+
+
+}
+.pageicons::before{
+	position: absolute;
+	content: " "!important;
+	width: 6vmin!important;
+	border-radius: 85px;
+	height: 6vmin;
+	/* left: 3vmin; */
+	margin-left: 2vmin;
+	margin-top: 1vmin;
+	/* top: 44px; */
+	background-color: white!important;
+	z-index: 20!important;
+	opacity: 0.245;
+}
+
+main{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 11px;
+  height: 100%;
+  position: relative;
+  background-color: dimgray;
+}
+
+main > .choboitems{
+	margin: 35px 10px;
+
+}
+input[type="search"]{
+  height: 50px;
+  width: 367px;
+  border-radius: 22px;
+  font-size: 25px;
+  padding: -3px;
+  /* padding-top: 6px; */
+  margin: 0;
+}
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+#login{
+	background-color: green;
+	width: 40px;
+	height:40px;
+}
+
+#whoamicont{
+	display: grid;
+  font-size: 18px;
+  border-top: 4px solid;
+  padding-top: 13px;
+}
+#whoami{
+	width: 243px;
+  display: grid;
+  font-size: 34px;
+  border: 11px solid;
+  text-align: center;
+  border-radius: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid;
+  user-select: none;
+}
+#ffver{
+	text-align: center;
+}
+
+
+#itemicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/items.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+#dutyicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/duty.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+#questsicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/quests.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+#craftingicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/crafting.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+#gatheringicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/gathering.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+#achievementsicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/achievements.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+#shopsicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/shops.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+#textcommandicon{
+	background: url("chrome-extension://__MSG_@@extension_id__/assets/macros.png");
+	/*background-repeat: no-repeat;*/
+	/*background-size: contain;*/
+}
+
+footer{
+	border: 1px solid;
+  display: flex;
+  flex-flow: row wrap;
+  height: 57px;
+}
+
+#listen{
+  border: 1px solid pink;
+  width: 75px;
+  flex: 0;
+  flex-basis: auto;
+  background-image:url("chrome-extension://__MSG_@@extension_id__/assets/mic.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#summon{
+    /* border: 1px solid blue; */
+    flex: auto;
+    padding: 9px;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 4px;
+    user-select: none;
+
+}
