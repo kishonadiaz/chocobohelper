@@ -606,15 +606,7 @@ var ChoboCharacter = function(startx,starty,width,height){
 
     //console.log(arrtwo);
 
-    var s = setInterval(async () =>{
-
-      
-      ////console.log(arrtwo);
-      //outarr = innerchild(arrtwo);
-      var out = setTimeout(async () =>{
-      // var event = new CustomEvent('seenit');
-        // outarr.dispatchEvent(event);
-        setTimeout(async ()=>{
+   var so = setTimeout(async ()=>{
       // var event = new CustomEvent('seenit');
             self.sighttimer.value = "";
             try{
@@ -623,19 +615,25 @@ var ChoboCharacter = function(startx,starty,width,height){
               //console.log(self.seen);
               //bod.removeChild(self.sriptsaa[0]);
               bod.appendChild(self.sriptsaa[1]);
+              setTimeout(async ()=>{
+                try{
+                  // if(self.sriptsaa[1] != undefined)
+                  //bod.removeChild(self.sriptsaa[1]);
+                }catch(e){
+                  
+                }
+                clearTimeout(so);
+                clearTimeout(this);
+
+              },1800);
             }catch(e){
 
             }
             
-            clearTimeout(this);
+            
 
 
-        },1700);
-        clearInterval(s);
-
-
-      },1500);
-    },1000);
+    },1700);
 
     
     return arrtwo;  
@@ -654,11 +652,11 @@ var ChoboCharacter = function(startx,starty,width,height){
 
   self.sightprocess = function(){
     var out = {};
-    try{
-      bod.removeChild(self.sriptsaa[1]);
-    }catch(e){
+    // try{
+    //   bod.removeChild(self.sriptsaa[1]);
+    // }catch(e){
 
-    }
+    // }
     
     if(self.seenit().length != 0){
       ////console.log(self.seenit());
@@ -830,7 +828,7 @@ var ChoboCharacter = function(startx,starty,width,height){
             
             self.phatoms[keyj] = elemj;
             //console.log(elemj);
-            // delete keyj;
+            // delete keyj; 
             // delete elemj;
           }else{
             console.log(key,keyj);
@@ -892,7 +890,7 @@ var ChoboCharacter = function(startx,starty,width,height){
             self.phatoms[keyj] = elemj;
             delete self.phatoms[keyj];
            }
-           if(styles[key][keyj]["visiblity"] === "none");{
+           if(styles[key][keyj]["visiblity"] === "hidden");{
             self.phatoms[keyj] = elemj;
             delete self.phatoms[keyj];
            }
@@ -957,6 +955,11 @@ var ChoboCharacter = function(startx,starty,width,height){
     var bod  = document.querySelector("body");
     var processes = document.getElementsByClassName("directionproc")[0];
     var html = '<body>Foo</body>';
+    try{
+      //bod.removeChild(self.sriptsaa[1]);
+    }catch(e){
+
+    }
     //processes.src = 'data:text/html;charset=utf-8,<html><head></head><body></body>';
     // processes.setAttribute('src',chrome.extension.getURL("app/choboscripts/choboObject/dirchtml.html"))
     // //console.log(processes);

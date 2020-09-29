@@ -5,6 +5,7 @@ docw[0].dispatchEvent(eventw);
 }finally{
 
 }
+console.log(icansee);
 //window.testing.setAttruibe("data-mover","new data");
 docw[0].setAttribute("data-mover","seen");
 
